@@ -1,0 +1,21 @@
+<h1>client.vtl</h1>
+
+
+<div class="">
+  <ul>
+    #foreach($client in $stylist.getClients())
+      <form class="" action="index.html" method="post">
+        <li>$client.getName() --> Appointment: $client.getTime()</li>
+      </form>
+    #end
+  </ul>
+</div>
+
+
+
+this page is specific to a stylist, and have list of all the clients.
+
+<a href="/">Homepage indext.vtl</a>
+<a href="/service">Service.vtl</a>
+<a href="/stylist">Stylist.vtl</a>
+<a href="/employement">Employment.vtl</a>

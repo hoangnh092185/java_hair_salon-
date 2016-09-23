@@ -1,23 +1,5 @@
-<h1>Stylist.Vtl</h1>
+<h1>Employment.vtl</h1>
 
-
-
-
-<h1>Meet Our Stylist</h1>
-<div class="jumbotron">
-  #if ($stylists.size() > 0)
-  <ul>
-    #foreach($stylist in $stylists)
-      <form action="/stylist/$stylist.getId()/delete-stylist-success" method ="post">
-        <li><a href="/stylist/$stylist.getId()">$stylist.getName()</a></li>
-        <button class="btn btn-danger">Delete</button>
-      </form>
-    #end
-  </ul>
-  #else
-  <h2>There are no pre-existing stylists!</h2>
-  #end
-</div>
 
 <div class="jumbotron">
   <h3>Create stylist account</h3>
@@ -27,6 +9,7 @@
     <button type="submit" class="btn btn-danger">Submit</button>
   </form>
 </div>
+
 
 <a href="/">Homepage indext.vtl</a>
 <a href="/service">Service.vtl</a>
