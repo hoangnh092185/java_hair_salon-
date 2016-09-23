@@ -72,6 +72,4 @@ public class Client {
               this.getStylistId() == newClient.getStylistId();
     }
   }
-
-
 }

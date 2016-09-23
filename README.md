@@ -1,8 +1,19 @@
 ## stories
 
-* As a user, I want to see a list of Movies that have been entered.
-* As a user, I want to be able to select a Movie and see its details.
-* As a user, I want to be able to click on a specific Name to see movies in that person. For instance, maybe I only want to see Movies that belong to Nhat, or Jeremy.
-* As a user, I want to be able to add Movies I have seen, including the reason that I chose them, and other relevant details.
-* As an admin, I want to be able to update any/all Movies to add relevant information, or to correct errors. (Important: Don't worry about user authentication, simply allow anyone to delete/update anything for the time being).
-* As an admin, I want to be able to delete a Movies if it doesn't contain accurate information, or isn't relevant.
+* As a salon employee, I need to be able to see a list of all our stylists.
+* As an employee, I need to be able to select a stylist, see their details, and see a * list of all clients that belong to that stylist.
+* As an employee, I need to add new stylists to our system when they are hired.
+* As an employee, I need to be able to add new clients to a specific stylist.
+* As an employee, I need to be able to update a stylist's details.
+* As an employee, I need to be able to update a client's details.
+* As an employee, I need to be able to delete a stylist if they're no longer employed here.
+* As an employee, I need to be able to delete a client if they no longer visit our salon.
+
+
+## Setup
+
+In PSQL:
+* CREATE DATABASE hair_salon;
+* CREATE TABLE clients (id serial PRIMAY KEY, name varchar, stylistId int);
+* CREATE TABLE stylists (id serial PRIMARY KEY, name varchar, description varchar, experience varchar);
+* CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
