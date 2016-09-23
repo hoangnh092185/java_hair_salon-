@@ -27,7 +27,7 @@ public class Stylist {
 
   public List<Client> getClients(){
     try(Connection con = DB.sql2o.open()){
-      String sql = "SELECT * FROM movies where stylistId=:id";
+      String sql = "SELECT * FROM clients where stylistId=:id";
       return con.createQuery(sql)
         .addParameter("id", this.id)
         .executeAndFetch(Client.class);
@@ -46,7 +46,7 @@ public class Stylist {
 
   public void save() {
     try(Connection con = DB.sql2o.open()){
-      String sql = "INSERT INTO stylists(name) VALUES(:name)";
+      String sql = "INSERT INTO stylists(name, description, experience) VALUES(:name, '0', '0')";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name", this.name)
         .executeUpdate()
@@ -64,12 +64,10 @@ public void delete(){
 }
 
 public void deleteClients(){
-  for(Client movie : this.getClients()){
-    movie.delete();
+  for(Client client : this.getClients()){
+    client.delete();
     }
   }
-
-
 
   @Override
   public boolean equals(Object otherStylist){

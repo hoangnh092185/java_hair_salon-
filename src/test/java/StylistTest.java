@@ -55,17 +55,15 @@ public class StylistTest{
     assertEquals(Stylist.find(newStylist2.getId()), newStylist2);
   }
 
-  // @Test
-  // public void getClients_returnClients_list(){
-  //   Stylist newStylist1 = new Stylist("Nhat");
-  //   newStylist1.save();
-  //   Client newClient1 = new Client("Batman", newClient1.getId());
-  //   newClient1.save();
-  //   Client newClient2 = new Client("Son", newClient1.getId());
-  //   newClient2.save();
-  //   assertEquals(newStylist1.getClients().get(0), newClient1);
-  // }
-
-
+  @Test
+  public void getClients_returnClients_list(){
+    Stylist newStylist1 = new Stylist("Nhat");
+    newStylist1.save();
+    Client newClient1 = new Client("Batman", newStylist1.getId());
+    newClient1.save();
+    Client newClient2 = new Client("Son", newStylist1.getId());
+    newClient2.save();
+    assertEquals(newStylist1.getClients().get(0), newClient1);
+  }
 
 }
