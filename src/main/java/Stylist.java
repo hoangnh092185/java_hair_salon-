@@ -5,6 +5,8 @@ import org.sql2o.*;
 public class Stylist {
   private String name;
   private int id;
+  private String description;
+  private String experience;
 
   public Stylist(String _name){
     name = _name;
@@ -16,6 +18,21 @@ public class Stylist {
 
   public int getId(){
     return id;
+  }
+  public void setDescription(String _description) {
+    this.description = _description;
+  }
+
+  public void setExperience(String _experience) {
+    this.experience = _experience;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public String getExperience() {
+    return experience;
   }
 
   public static List<Stylist> all() {

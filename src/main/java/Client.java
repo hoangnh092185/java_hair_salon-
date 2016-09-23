@@ -7,8 +7,7 @@ public class Client {
   private String name;
   private int id;
   private int stylistId;
-  private String description;
-  private String experience;
+
 
   public Client(String _name, int _stylistId){
     name = _name;
@@ -26,23 +25,6 @@ public class Client {
   public int getStylistId() {
     return stylistId;
   }
-
-  public void setDescription(String _description) {
-    this.description = _description;
-  }
-
-  public void setStars(String _experience) {
-    this.experience = _experience;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public String getStars() {
-    return experience;
-  }
-
 
   public static List<Client> all() {
   String sql = "SELECT id, name, stylistId FROM clients";
