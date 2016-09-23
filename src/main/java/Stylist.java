@@ -54,19 +54,39 @@ public class Stylist {
     }
   }
 
-public void delete(){
-  try(Connection con = DB.sql2o.open()) {
-    String sql = "DELETE FROM stylists WHERE id = :id";
-    con.createQuery(sql)
-      .addParameter("id", this.id)
-      .executeUpdate();
-  }
-}
-
-public void deleteClients(){
-  for(Client client : this.getClients()){
-    client.delete();
+  public void updateDescription(){
+    try(Connection con= DB.sql2o.open()){
+        String sql = "UPDATE stylists SET description=:description WHERE id=:id ";
+        con.createQuery(sql)
+          .addParameter("description", this.description)
+          .addParameter("id", this.id)
+          .executeUpdate();
     }
+  }
+
+  public void updateExperience(){
+    try(Connection con= DB.sql2o.open()){
+      String sql = "UPDATE Stylists SET experience=:experience WHERE id=:id ";
+      con.createQuery(sql)
+        .addParameter("experience", this.experience)
+        .addParameter("id", this.id)
+        .executeUpdate();
+    }
+  }
+
+  public void delete(){
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "DELETE FROM stylists WHERE id = :id";
+      con.createQuery(sql)
+        .addParameter("id", this.id)
+        .executeUpdate();
+    }
+  }
+
+  public void deleteClients(){
+    for(Client client : this.getClients()){
+      client.delete();
+      }
   }
 
   @Override
