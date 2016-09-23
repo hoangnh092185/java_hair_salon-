@@ -8,7 +8,6 @@ public class Client {
   private int id;
   private int stylistId;
 
-
   public Client(String _name, int _stylistId){
     name = _name;
     stylistId = _stylistId;
@@ -62,27 +61,6 @@ public class Client {
         .executeUpdate();
     }
   }
-
-  public void updateDescription() {
-    try(Connection con= DB.sql2o.open()){
-      String sql = "UPDATE clients SET description=:description WHERE id=:id ";
-      con.createQuery(sql)
-        .addParameter("description", this.description)
-        .addParameter("id", this.id)
-        .executeUpdate();
-    }
-  }
-
-  public void updateStars() {
-    try(Connection con= DB.sql2o.open()){
-      String sql = "UPDATE clients SET experience=:experience WHERE id=:id ";
-      con.createQuery(sql)
-        .addParameter("experience", this.experience)
-        .addParameter("id", this.id)
-        .executeUpdate();
-    }
-  }
-
 
   @Override
   public boolean equals(Object otherClient){
