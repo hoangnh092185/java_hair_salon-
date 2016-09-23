@@ -1,0 +1,25 @@
+<h1>Top Ten List</h1>
+<div class="jumbotron">
+  #if ($persons.size() > 0)
+  <ul>
+    #foreach($person in $persons)
+      <form action="/person/$person.getId()/delete-success" method ="post">
+        <li><a href="/person/$person.getId()">$person.getName()</a></li>
+        <button class="btn btn-danger">Delete</button>
+      </form>
+    #end
+  </ul>
+  #else
+  <h2>There are no pre-existing users!</h2>
+  #end
+</div>
+
+
+<div class="jumbotron">
+  <h3>Create New User</h3>
+  <form action="/person/new" method="post">
+    <label for="user-name">What is your name?</label>
+    <input id="user-name" name="user-name" class="form-control" type="text" placeholder="Name" required="">
+    <button type="submit" class="btn btn-danger">Submit</button>
+  </form>
+</div>
