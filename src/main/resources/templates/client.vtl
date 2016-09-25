@@ -1,16 +1,24 @@
-<h1>client.vtl</h1>
+<h1>$stylist.getName() appointment list</h1>
 
 
-<div class="">
+<div class="jumbotron">
   <ul>
     #foreach($client in $stylist.getClients())
-      <form class="" action="index.html" method="post">
-        <li>$client.getName() --> Appointment: $client.getTime()</li>
+      <li>$client.getName()</li>
+      <form class="" action="client/$getId()/delate-client-success" method="post">
+        <button type="submit" class="btn btn-danger" name="button"></button>
       </form>
     #end
   </ul>
 </div>
 
-
+<div class="jumbotron">
+  <h3>New appointment</h3>
+  <form class="" action="/stylist/$stylist.getId()/client/new" method="post">
+    <label for="Clientname">Client Name</label>
+    <input id="clientName"type="text" name="Cliebtname" value="">
+  </form>
+  <button type="submit" name="button">Add new appointment</button>
+</div>
 
 this page is specific to a stylist, and have list of all the clients.

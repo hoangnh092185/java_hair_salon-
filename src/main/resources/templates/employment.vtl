@@ -2,10 +2,14 @@
 
 <div class="">
   <div class="jumbotron">
+    <h4>Current Stylist:</h4>
     #if ($stylists.size() > 0)
     <ul>
       #foreach($stylist in $stylists)
-          <li><a href="/stylist/$stylist.getId()">$stylist.getName()</a></li>
+      <li><a href="/stylist/$stylist.getId()">$stylist.getName()</a></li>
+        <form action="/stylist/$stylist.getId()/delete" method="post">
+          <button type="submit" class="btn btn-danger" name="button">delete</button>
+        </form>
       #end
     </ul>
     #else

@@ -9,7 +9,7 @@
   <ul>
     #foreach($stylist in $stylists)
       <form action="/stylist" method ="post">
-        <li><a href="/stylist/$stylist.getId()/client/$client.getId()">$stylist.getName()</a></li>
+        <li><a href="/stylist/$stylist.getId()/client">$stylist.getName()</a></li>
           <h4>Years of Experience: $stylist.getExperience()</h4>
           <h4>About $stylist.getName(): $stylist.getDescription()</h4>
     #end
