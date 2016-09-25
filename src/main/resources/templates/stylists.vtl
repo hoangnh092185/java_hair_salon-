@@ -1,0 +1,20 @@
+<h1>Stylist.Vtl</h1>
+
+
+
+
+<h1>Meet Our Stylist</h1>
+<div class="jumbotron">
+  #if ($stylists.size() > 0)
+  <ul>
+    #foreach($stylist in $stylists)
+      <form action="/stylist" method ="post">
+        <li><a href="/stylist/$stylist.getId()/client/$client.getId()">$stylist.getName()</a></li>
+          <h4>Years of Experience: $stylist.getExperience()</h4>
+          <h4>About $stylist.getName(): $stylist.getDescription()</h4>
+    #end
+  </ul>
+  #else
+  <h2>There are no pre-existing stylists!</h2>
+  #end
+</div>

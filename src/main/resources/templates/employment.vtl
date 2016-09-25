@@ -1,17 +1,33 @@
 <h1>Employment.vtl</h1>
 
+<div class="">
+  <div class="jumbotron">
+    #if ($stylists.size() > 0)
+    <ul>
+      #foreach($stylist in $stylists)
+          <li><a href="/stylist/$stylist.getId()">$stylist.getName()</a></li>
+      #end
+    </ul>
+    #else
+    <h2>There are no pre-existing stylists!</h2>
+    #end
+  </div>
 
 <div class="jumbotron">
   <h3>Create stylist account</h3>
-  <form action="/stylist/new" method="post">
-    <label for="user-name">Add stylist name.</label>
-    <input id="user-name" name="user-name" class="form-control" type="text" placeholder="Name" required="">
+  <form action="/employment/new" method="post">
+    <div class="form-group">
+      <label for="newstylist">Stylist Name.</label>
+      <input id="newstylist" name="newStylist" class="form-control" type="text" placeholder="Name" required="">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input id="description" type="text" name="description" value="">
+    </div>
+    <div class="form-group">
+      <label for="experience">Years of experience</label>
+      <input type="text" name="experience" value="">
+    </div>
     <button type="submit" class="btn btn-danger">Submit</button>
   </form>
 </div>
-
-
-<a href="/">Homepage indext.vtl</a>
-<a href="/service">Service.vtl</a>
-<a href="/stylist">Stylist.vtl</a>
-<a href="/employement">Employment.vtl</a>

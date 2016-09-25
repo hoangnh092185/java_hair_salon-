@@ -19,20 +19,37 @@ public class App {
 
     get("/stylist", (request, response)->{
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("stlylists", Stylist.all());
-      model.put("template","templates/stylist.vtl");
+      model.put("stylists", Stylist.all());
+      model.put("template","templates/stylists.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/stylist/new", (request, response)->{
+    get("/employment", (request, response)->{
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("stylists", Stylist.all());
-      Stylist newStylist = new Stylist(request.queryParams("newStylist"));
-      newStylist.save();
-      model.put("stylist", newStylist);
       model.put("template","templates/employment.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    post("/employment/new", (request, response)->{
+      Map<String, Object> model = new HashMap<String, Object>();
+      Stylist newStylist = new Stylist(request.queryParams("newStylist"), request.queryParams("description"), request.queryParams("experience"));
+      newStylist.save();
+      model.put("stylist", newStylist);
+      model.put("stylists", Stylist.all());
+      model.put("template","templates/employment.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    // post("/employment", (request, response)->{
+    //   Map<String, Object> model = new HashMap<String, Object>();
+    //   model.put("stylists", Stylist.all());
+    //   Stylist newStylist = new Stylist(request.queryParams("new-stylist"));
+    //   newStylist.save();
+    //   model.put("stylist", newStylist);
+    //   model.put("template","templates/employment.vtl");
+    //   return new ModelAndView(model, layout);
+    // }, new VelocityTemplateEngine());
 
     // post("/stylist/:id/client/new", (request, response)->{
     //   Map<String, Object> model = new HashMap<String, Object>();
