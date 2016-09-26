@@ -1,8 +1,8 @@
-# :file_folder: [Hair_Salon](https://github.com/hoangnh092185) :file_folder:
+# :file_folder: [Hair_Salon](https://github.com/hoangnh092185/java_hair_salon-) :file_folder:
 
 
   __Version 1.0.0: September 23, 2016__
-## by [Nhat Hoang](http://karenfreemansmith.github.io)
+## by [Nhat Hoang](https://github.com/hoangnh092185)
 
 ### Description
 __*Individual Project for Epicodus Java Programming*__
@@ -18,8 +18,6 @@ Create a webpage that have all the elements listed below.
 * As an employee, I need to be able to update a client's details.
 * As an employee, I need to be able to delete a stylist if they're no longer employed here.
 * As an employee, I need to be able to delete a client if they no longer visit our salon.
-
-
 
 ## Setup
 
@@ -39,4 +37,4 @@ In PSQL:
 ### Legal
 *Licensed under the GNU General Public License v3.0*
 
-Copyright &Copy; 2016 **_Karen Freeman-Smith_**
+Copyright &copy; 2016 **_Nhat Hoang_**
