@@ -128,7 +128,7 @@ COPY clients (id, name, stylistid) FROM stdin;
 -- Name: clients_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('clients_id_seq', 1, false);
+SELECT pg_catalog.setval('clients_id_seq', 14, true);
 
 
 --
@@ -136,6 +136,7 @@ SELECT pg_catalog.setval('clients_id_seq', 1, false);
 --
 
 COPY stylists (id, name, description, experience) FROM stdin;
+6	Bob Bob 	Extreme haircut is my jam	3
 \.
 
 
@@ -143,7 +144,7 @@ COPY stylists (id, name, description, experience) FROM stdin;
 -- Name: stylists_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('stylists_id_seq', 1, false);
+SELECT pg_catalog.setval('stylists_id_seq', 15, true);
 
 
 --
