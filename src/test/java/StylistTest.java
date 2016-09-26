@@ -66,4 +66,11 @@ public class StylistTest{
     assertEquals(newStylist1.getClients().get(0), newClient1);
   }
 
+  @Test
+  public void update_updateStylistDescription_true(){
+    Stylist myStylist = new Stylist("Jone", "I love hair", "3");
+    myStylist.save();
+    myStylist.updateDescription("I love wigs");
+    assertEquals("I love wigs", Stylist.find(myStylist.getId()).getDescription());
+  }
 }

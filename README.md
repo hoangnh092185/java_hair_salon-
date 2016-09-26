@@ -1,3 +1,6 @@
+
+
+
 ## stories
 
 * As a salon employee, I need to be able to see a list of all our stylists.

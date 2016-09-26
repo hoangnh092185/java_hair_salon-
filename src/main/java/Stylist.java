@@ -75,25 +75,25 @@ public class Stylist {
     }
   }
 
-  // public void updateDescription(){
-  //   try(Connection con= DB.sql2o.open()){
-  //       String sql = "UPDATE stylists SET description=:description WHERE id=:id ";
-  //       con.createQuery(sql)
-  //         .addParameter("description", this.description)
-  //         .addParameter("id", this.id)
-  //         .executeUpdate();
-  //   }
-  // }
-  //
-  // public void updateExperience(){
-  //   try(Connection con= DB.sql2o.open()){
-  //     String sql = "UPDATE Stylists SET experience=:experience WHERE id=:id ";
-  //     con.createQuery(sql)
-  //       .addParameter("experience", this.experience)
-  //       .addParameter("id", this.id)
-  //       .executeUpdate();
-  //   }
-  // }
+  public void updateDescription(String _description){
+    try(Connection con= DB.sql2o.open()){
+        String sql = "UPDATE stylists SET description = :description WHERE id = :id ";
+        con.createQuery(sql)
+          .addParameter("description", _description)
+          .addParameter("id", this.id)
+          .executeUpdate();
+    }
+  }
+
+  public void updateExperience(String _experience){
+    try(Connection con= DB.sql2o.open()){
+      String sql = "UPDATE Stylists SET experience=:experience WHERE id=:id ";
+      con.createQuery(sql)
+        .addParameter("experience", _experience)
+        .addParameter("id", this.id)
+        .executeUpdate();
+    }
+  }
 
   public void delete(){
     try(Connection con = DB.sql2o.open()) {
