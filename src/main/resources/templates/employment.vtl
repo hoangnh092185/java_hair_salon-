@@ -6,7 +6,7 @@
     #if ($stylists.size() > 0)
     <ul>
       #foreach($stylist in $stylists)
-      <li><a href="/stylist/$stylist.getId()">$stylist.getName()</a></li>
+      <li><a href="/stylist/$stylist.getId()/client">$stylist.getName()</a></li>
         <h4>Years of of experience: $stylist.getExperience()</h4>
         <h4>About me: $stylist.getDescription()</h4>
         <form action="/stylist/$stylist.getId()/delete" method="post">
