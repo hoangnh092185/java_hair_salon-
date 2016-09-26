@@ -5,8 +5,8 @@
   <ul>
     #foreach($client in $stylist.getClients())
       <li>$client.getName()</li>
-      <form class="" action="client/$getId()/delate-client-success" method="post">
-        <button type="submit" class="btn btn-danger" name="button"></button>
+      <form class="" action="/stylist/$stylist.getId()/client/$client.getId()/delete" method="post">
+        <button type="submit" class="btn btn-danger" name="button">Delete</button>
       </form>
     #end
   </ul>
@@ -15,10 +15,8 @@
 <div class="jumbotron">
   <h3>New appointment</h3>
   <form class="" action="/stylist/$stylist.getId()/client/new" method="post">
-    <label for="Clientname">Client Name</label>
-    <input id="clientName"type="text" name="Cliebtname" value="">
+    <label for="clientName">Client Name</label>
+    <input id="clientName"type="text" name="clientName" value="">
+    <button class="btn btn-success" type="submit" name="button">Add new appointment</button>
   </form>
-  <button type="submit" name="button">Add new appointment</button>
 </div>
-
-this page is specific to a stylist, and have list of all the clients.
