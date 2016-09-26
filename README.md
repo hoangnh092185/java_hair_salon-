@@ -7,7 +7,10 @@
 ### Description
 __*Individual Project for Epicodus Java Programming*__
 
-Create a webpage that have all the elements listed below.
+Create a webpage that have all the elements that meet the client needs listed below.
+Test all the class methods with gradle test function before integrating functionality into Sparks.
+Include CRUD functionality include for each class in Sparks.
+Spark routes fallow RESTful convention.
 
 ## stories
 * As a salon employee, I need to be able to see a list of all our stylists.
