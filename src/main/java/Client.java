@@ -6,13 +6,16 @@ import org.sql2o.*;
 public class Client {
   private String name;
   private int id;
+  private String description;
   private int stylistId;
 
   public Client(String _name, int _stylistId){
     name = _name;
     stylistId = _stylistId;
   }
-
+  public String getDescription(){
+    return description;
+  }
   public String getName(){
     return name;
   }
@@ -40,6 +43,15 @@ public class Client {
         .addParameter("stylistId", this.stylistId)
         .executeUpdate()
         .getKey();
+    }
+  }
+  public void updateDescription(String _description){
+    try(Connection con= DB.sql2o.open()){
+        String sql = "UPDATE clients SET description = :description WHERE id = :id ";
+        con.createQuery(sql)
+          .addParameter("description", _description)
+          .addParameter("id", this.id)
+          .executeUpdate();
     }
   }
 
