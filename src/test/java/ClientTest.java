@@ -53,4 +53,10 @@ public class ClientTest{
     newClient2.save();
     assertEquals(Client.find(newClient2.getId()), newClient2);
   }
+  public void update_returnUpdatedClientDescription_string(){
+    Client newClient1 = new Client("Batman", 1);
+    newClient1.save();
+    newClient1.updateDescription("Is bald.");
+    assertEquals(Client.find(newClient1.getId()).getDescription(), "Is bald.");
+  }
 }

@@ -1,18 +1,25 @@
 
-<h1>Meet Our Stylist</h1>
+<h1>Client List</h1>
 
 
 <div class="jumbotron">
-  #if ($stylists.size() > 0)
+  #if ($clients.size() > 0)
   <ul>
-    #foreach($stylist in $stylists)
-      <form action="/stylist" method ="post">
-        <li><a href="/stylist/$stylist.getId()/client">$stylist.getName()</a></li>
-          <h4>Years of Experience: $stylist.getExperience()</h4>
-          <h4>About $stylist.getName(): $stylist.getDescription()</h4>
+    #foreach($client in $clients)
+      <!-- <form action="/stylist" method ="post"> -->
+        <li><a href="/client/$client.getId()/client">$client.getName()</a>
+          <h4>$client.getDescription()</h4>
+        </li>
+        <form class="" action="/stylist/$stylist.getId()/client/$client.getId()/delete" method="post">
+          <button type="submit" class="btn btn-danger" name="button">Delete</button>
+        </form>
+        <form class="" action="/client/$client.getId()/update" method="post">
+          <button type="submit" class="btn btn-danger" name="button">Updates</button>
+        </form>
+      <!-- </form> -->
     #end
   </ul>
   #else
-  <h2>There are no pre-existing stylists!</h2>
+  <h2>There are no pre-existing clients!</h2>
   #end
 </div>
