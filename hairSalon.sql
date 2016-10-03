@@ -118,8 +118,10 @@ ALTER TABLE ONLY stylists ALTER COLUMN id SET DEFAULT nextval('stylists_id_seq':
 --
 
 COPY clients (id, name, stylistid, description) FROM stdin;
-18	Bill Bill	17	\N
-19	Bad Jones	17	\N
+30	Bone Bone 	19	\N
+41	bas 	19	\N
+42	boose 	19	\N
+43	bomb	19	\N
 \.
 
 
@@ -127,7 +129,7 @@ COPY clients (id, name, stylistid, description) FROM stdin;
 -- Name: clients_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('clients_id_seq', 19, true);
+SELECT pg_catalog.setval('clients_id_seq', 43, true);
 
 
 --
@@ -135,7 +137,7 @@ SELECT pg_catalog.setval('clients_id_seq', 19, true);
 --
 
 COPY stylists (id, name, description, experience) FROM stdin;
-17	Jone Jone	I love Hair	2
+19	Jill Jill	love hair	3
 \.
 
 
@@ -143,7 +145,7 @@ COPY stylists (id, name, description, experience) FROM stdin;
 -- Name: stylists_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('stylists_id_seq', 17, true);
+SELECT pg_catalog.setval('stylists_id_seq', 20, true);
 
 
 --
