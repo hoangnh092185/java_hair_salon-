@@ -4,8 +4,12 @@
   <ul>
     #foreach($client in $stylist.getClients())
       <li>$client.getName()</li>
+        <h3>$client.getDescription()</h3>
       <form class="" action="/stylist/$stylist.getId()/client/$client.getId()/delete" method="post">
         <button type="submit" class="btn btn-danger" name="button">Delete</button>
+      </form>
+      <form action="/stylist/$stylist.getId()/client/$client.getId()/update" method="get">
+        <button type="submit" class="btn btn-danger" name="button">update</button>
       </form>
     #end
   </ul>
@@ -17,6 +21,8 @@
 
       <label for="clientName">Add client name</label>
       <input id="clientName"type="text" name="clientName" value="">
+      <label for="clientDescription">Add client description</label>
+      <input id="clientDescription"type="text" name="clientDescription" value="">
 
     <button class="btn btn-success" type="submit" name="button">Submit add</button>
   </form>

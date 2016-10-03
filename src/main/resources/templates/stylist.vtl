@@ -1,6 +1,7 @@
 <div class="">
   <div class="jumbotron">
     <h4>Current Stylist:</h4>
+    <h4>click on stylist name to see client list</h4>
     #if ($stylists.size() > 0)
     <ul>
       #foreach($stylist in $stylists)
@@ -13,9 +14,9 @@
         <form action="/stylist/$stylist.getId()/update" method="get">
           <button type="submit" class="btn btn-danger" name="button">update</button>
         </form>
-        <form action="/stylist/$stylist.getId()/client" method="get">
+        <!-- <form action="/stylist/$stylist.getId()/client" method="get">
           <button type="submit" class="btn btn-danger" name="button">Add Client</button>
-        </form>
+        </form> -->
       #end
     </ul>
     #else
