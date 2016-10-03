@@ -13,6 +13,9 @@
         <form action="/stylist/$stylist.getId()/update" method="get">
           <button type="submit" class="btn btn-danger" name="button">update</button>
         </form>
+        <form action="/stylist/$stylist.getId()/client" method="get">
+          <button type="submit" class="btn btn-danger" name="button">Add Client</button>
+        </form>
       #end
     </ul>
     #else
@@ -21,8 +24,8 @@
   </div>
 
 <div class="jumbotron">
-  <h3>Create stylist account</h3>
-  <form action="/employment/new" method="post">
+  <h3>Create new stylist account</h3>
+  <form action="/stylist/new" method="post">
     <div class="form-group">
       <label for="newstylist">Stylist Name.</label>
       <input id="newstylist" name="newStylist" class="form-control" type="text" placeholder="Name" required="">
